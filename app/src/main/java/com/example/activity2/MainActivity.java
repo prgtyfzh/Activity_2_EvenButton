@@ -2,6 +2,7 @@ package com.example.activity2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
                 if(nama.equals("admin@mail.com")&& password.equals("123")){
                     Toast.makeText(MainActivity.this, "Login Sukses", Toast.LENGTH_SHORT).show();
+
+                    Bundle bn = new Bundle();
+
+                    bn.putString("a", nama.trim());
+                    bn.putString("b", password.trim());
+
+                    Intent i = new Intent(MainActivity.this,ActivityHasil.class);
+                    i.putExtras(bn);
+                    startActivity(i);
+
                 } else if (nama.equals("admin@mail.com")&& password.equals(password)){
                     Toast.makeText(MainActivity.this, "Password Salah", Toast.LENGTH_SHORT).show();
                 } else if (nama.equals(nama)&& password.equals("123")){
