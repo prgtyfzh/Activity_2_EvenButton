@@ -12,7 +12,6 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Home_Activity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
@@ -79,6 +78,9 @@ public class Home_Activity extends AppCompatActivity implements PopupMenu.OnMenu
 
                 //membuat event untuk popup menu ketika dipilih
                 pm.setOnMenuItemClickListener(Home_Activity.this);
+
+                //menampilkan popup menu dari layout menu
+                pm.inflate(R.menu.popup_menu);
 
                 //menampilkan popup menu
                 pm.show();

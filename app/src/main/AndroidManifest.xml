@@ -14,7 +14,7 @@
             android:parentActivityName=".Home_Activity"></activity>
         <activity
             android:name=".Home_Activity"
-            android:exported="false" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DaftarActivity"
             android:parentActivityName=".MainActivity" />

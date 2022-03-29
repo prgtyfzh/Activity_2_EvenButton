@@ -7,19 +7,23 @@ import android.widget.TextView;
 
 public class ActivityLihatData extends AppCompatActivity {
 
+
     //deklarasi var dengan jenis TextView
     TextView tvnama, tvnomor;
-
-    //membuat var dengan jenis data bundle dan assign value dari var tersebut dengan getIntent().getExtras()
-    Bundle bundle = getIntent().getExtras();
-
-    //membuat var nama dan assign value dari pesan yang dikirimkan dari activity sebelumnya
-    String nama = bundle.getString("a");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lihat_data);
+
+        tvnama = findViewById(R.id.tvNamaKontak);
+        tvnomor = findViewById(R.id.tvNomorTelepon);
+
+        //membuat var dengan jenis data bundle dan assign value dari var tersebut dengan getIntent().getExtras()
+        Bundle bundle = getIntent().getExtras();
+
+        //membuat var nama dan assign value dari pesan yang dikirimkan dari activity sebelumnya
+        String nama = bundle.getString("a");
 
         switch (nama)
         {
@@ -63,7 +67,6 @@ public class ActivityLihatData extends AppCompatActivity {
                 tvnama.setText("Vian M");
                 tvnomor.setText("08122969344");
                 break;
-
         }
     }
 }
